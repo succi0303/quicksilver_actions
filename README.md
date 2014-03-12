@@ -1,6 +1,6 @@
 # QuickSilver Actions
 
-Quicksilverのアクションとして使用するRuby製のスクリプトです。
+[Quicksilver](http://qsapp.com)のアクションとして使用するRuby製のスクリプトです。
 
 - lookup\_dictionary - 1stペインに入力したテキストをMacの内蔵辞書で調べる
 - uri\_encode - 1stペインに入力したテキストをURIエンコードする
