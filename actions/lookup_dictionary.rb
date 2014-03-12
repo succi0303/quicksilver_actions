@@ -27,6 +27,8 @@ class LookupDict
     system cmd
   end
 
+  private
+
   # 検索するテキストを受取り、シェルで実行するコマンドを返す。
   #
   # @param [String] word 検索するテキスト(URIエンコード済)
