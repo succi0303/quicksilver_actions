@@ -12,10 +12,6 @@ require 'uri'
 #
 class LookupDict
 
-  def initialize
-    @base_cmd = 'open dict://'
-  end
-
   # 検索対象のテキストからシェル実行用のコマンドを作成し
   # systemメソッドで実行する。
   #
@@ -34,7 +30,8 @@ class LookupDict
   # @param [String] word 検索するテキスト(URIエンコード済)
   # @return [String] シェルで実行するコマンド
   def construct_command(word)
-    cmd = [@base_cmd, word]
+    base_cmd = 'open dict://'
+    cmd = [base_cmd, word]
     cmd.join('')
   end
 
