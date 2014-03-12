@@ -1,0 +1,5 @@
+.bundle/
+.yardoc/
+/doc
+/vendor
+.DS_Store
