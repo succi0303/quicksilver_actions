@@ -22,6 +22,8 @@ class URIEncode
     system cmd
   end
 
+  private
+
   # シェル実行用のコマンドを組み立てる
   #
   # @param [String] word エンコード済みのテキスト
