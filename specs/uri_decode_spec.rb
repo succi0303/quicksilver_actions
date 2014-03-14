@@ -2,15 +2,10 @@ require_relative '../actions/uri_decode'
 
 describe "URIDecode" do
 
-  let(:ue) { URIDecode.new }
-
-  it "construct correct command" do
-    cmd = ue.send(:construct_command, 'hogehoge')
-    expect(cmd).to eq "echo 'hogehoge' | qs"
-  end
+  let(:ue) { QSActions::URIDecode.new }
 
   it "does uri decode for args" do
-    decoded_word = ue.send(:uri_decode, '%e3%83%86%e3%82%b9%e3%83%88')
+    decoded_word = ue.send(:update_text, '%e3%83%86%e3%82%b9%e3%83%88')
     expect(decoded_word).to eq "テスト"
   end
 end
