@@ -1,13 +1,12 @@
 # QuickSilver Actions
 
-[Quicksilver](http://qsapp.com)のアクションとして使用するRuby製のスクリプトです。
+[Quicksilver](http://qsapp.com)のアクションとして使用できるRuby製のスクリプト群です。
 
-- lookup\_dictionary - 1stペインに入力したテキストをMacの内蔵辞書で調べる
-- uri\_encode - 1stペインに入力したテキストをURIエンコードする
+## インストール
 
-など
+`actions`ディレクトリ以下のファイル(ディレクトリを含む)を、`~/Library/Application\ Support/Quicksilver/Actions/`のディレクトリにコピーして、Quicksilverを再起動するとQuicksilverのアクションとして使用できるようになります。
 
-`actions`ディレクトリ以下のRubyスクリプトを、`~/Library/Application\ Support/Quicksilver/Actions/`のディレクトリにコピーして、Quicksilverを再起動するとQuicksilverのアクションとして使用できるようになります。(プロジェクトルートで`rake install`を実行するファイルのコピーを実行できます。)
+プロジェクトルートで`rake install`を実行すると、必要なシンボリックリンクを作成しますので、その後Quicksilverを再起動するとアクションが利用可能になります。
 
 ### Command Line Toolのインストールについて
 
@@ -22,3 +21,17 @@ $ echo "hello, world" | qs
 ```
 
 Quicksilverの1stペインに「hello, world」が表示されればインストールが完了しています。
+
+## アクション
+
+インストールが完了すると、Quicksilverのアクションが追加されます。Quicksilverの1stペインにテキストを入力し、2ndペインで実行したいアクションを選択します。利用できるアクションは以下の通りです。
+
+- html\_escape - HTMLエスケープを実行する
+- html\_unescape - HTMLアンエスケープを実行する
+- lookup\_dictionary - Macの内蔵辞書で意味を調べる
+- paren\_quote - シングルクォーテーションで囲む
+- uri\_decode - URIデコードを実行する
+- uri\_encode - URIエンコードを実行する
+
+など
+
