@@ -9,10 +9,5 @@ describe "ParenQuote" do
     expect(updated_text).to eq "'テスト'"
   end
 
-  it "construct correct command" do
-    cmd = pq.send(:output_into_quicksilver, 'hogehoge')
-    expect(cmd).to eq 'echo "hogehoge" | qs'
-  end
-
 end
 
