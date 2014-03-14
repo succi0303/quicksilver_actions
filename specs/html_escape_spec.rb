@@ -1,16 +1,11 @@
 require_relative '../actions/html_escape'
 
-describe HTMLEscape do
+describe "html_escape" do
 
-  let(:he) { HTMLEscape.new }
+  let(:he) { QSActions::HTMLEscape.new }
 
-  it "construct correct command" do
-    cmd = he.send(:construct_command, 'hogehoge')
-    expect(cmd).to eq 'echo "hogehoge" | qs'
-  end
-
-  it "does html escape correctly" do
-    escaped_word = he.send(:html_escape, '<')
+  it "does html escape" do
+    escaped_word = he.send(:update_text, '<')
     expect(escaped_word).to eq '&lt;'
   end
 end
