@@ -1,4 +1,4 @@
-require_relative '../actions/paren_double_kakko'
+require 'spec_helper'
 
 describe "ParenDoubleKakko" do
 

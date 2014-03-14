@@ -26,6 +26,7 @@ Quicksilverの1stペインに「hello, world」が表示されればインスト
 
 インストールが完了すると、Quicksilverのアクションが追加されます。Quicksilverの1stペインにテキストを入力し、2ndペインで実行したいアクションを選択します。利用できるアクションは以下の通りです。
 
+- get\_page\_title - 指定したURLのウェブページのタイトルを取得する
 - html\_escape - HTMLエスケープを実行する
 - html\_unescape - HTMLアンエスケープを実行する
 - lookup\_dictionary - Macの内蔵辞書で意味を調べる
