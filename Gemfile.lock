@@ -1,3 +1,9 @@
+PATH
+  remote: .
+  specs:
+    quicksilver actions (0.0.1)
+      nokogiri
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -35,6 +41,7 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    rake (0.9.6)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.3)
       ffi (>= 0.5.0)
@@ -55,9 +62,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler
   growl
   guard
   guard-rspec
-  nokogiri
+  quicksilver actions!
+  rake
   rspec
   yard
