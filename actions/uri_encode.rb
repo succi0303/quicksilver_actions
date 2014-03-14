@@ -1,42 +1,13 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
+require_relative './lib_qs_actions/qs_actions'
 require 'uri'
 
 module QSActions
 
-  def self.this_is_test?
-    !($0 == __FILE__)
-  end
-
   # @author succi0303
-  class URIEncode
-
-    # Quicksilverの1stペインのテキストをURIエンコードし
-    # 1stペインに書き戻す
-    #
-    # @param [String] text Quicksilver 1stペインのテキスト
-    def execute_action(text)
-      updated_text = update_text(text)
-      output_into_quicksilver(updated_text)
-    end
-
-    private
-
-    # テキストをQuicksilverに出力する
-    #
-    # @param [String] text Quicksilverに出力するテキスト
-    def output_into_quicksilver(word)
-      quoted_word = %Q("#{word}")
-      base_cmd_before = 'echo'
-      base_cmd_after =  '| qs'
-
-      cmd_array = [base_cmd_before, quoted_word, base_cmd_after]
-      cmd = cmd_array.join(' ')
-
-      return cmd if QSActions::this_is_test?
-      system cmd
-    end
+  class URIEncode < ActionTemplate
 
     # URIエンコードする
     #
@@ -51,10 +22,11 @@ module QSActions
 
 end
 
-unless QSActions::this_is_test?
+if $0 == __FILE__
 
   text = ARGV[0]
   ue = QSActions::URIEncode.new
-  ue.execute_action(text)
+  cmd = ue.execute_action(text)
+  system cmd
 
 end
