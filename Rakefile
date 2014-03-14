@@ -38,7 +38,8 @@ task :install do
       puts "#{file_name}がすでに存在します"
     else
       puts "#{file_name}をコピーします"
-      sh %Q(cp "#{SOURCE_DIR + file_name}" "#{TARGET_DIR + file_name}")
+      # sh %Q(cp "#{SOURCE_DIR + file_name}" "#{TARGET_DIR + file_name}")
+      sh %Q(ln -s "#{SOURCE_DIR + file_name}" "#{TARGET_DIR + file_name}")
     end
   end
   puts "アクションのインストールを完了しました"
