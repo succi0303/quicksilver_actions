@@ -7,7 +7,7 @@ require 'cgi'
 module QSActions
 
   # @author succi0303
-  class HTMLEscape
+  class HTMLEscape < ActionTemplate
     # HTMLエスケープする
     #
     # @param [String] word エスケープ対象のテキスト
@@ -25,6 +25,7 @@ if $0 == __FILE__
 
   text = ARGV[0]
   he = QSActions::HTMLEscape.new
-  he.escape(text)
+  cmd = he.execute_action(text)
+  system cmd
 
 end
