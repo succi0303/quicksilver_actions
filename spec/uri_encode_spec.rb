@@ -1,4 +1,4 @@
-require_relative '../actions/uri_encode'
+require 'spec_helper'
 
 describe "URIEncode" do
   

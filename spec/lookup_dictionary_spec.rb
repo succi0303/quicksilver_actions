@@ -1,4 +1,4 @@
-require_relative '../actions/lookup_dictionary'
+require 'spec_helper'
 
 describe 'lookup_dictionary' do
 

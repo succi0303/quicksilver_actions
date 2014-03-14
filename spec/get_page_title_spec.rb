@@ -1,4 +1,4 @@
-require_relative '../actions/get_page_title'
+require 'spec_helper'
 
 describe "get_page_title" do
 

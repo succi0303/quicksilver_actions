@@ -1,4 +1,4 @@
-require_relative '../actions/paren_quote'
+require 'spec_helper'
 
 describe "ParenQuote" do
 

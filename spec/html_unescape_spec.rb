@@ -1,4 +1,4 @@
-require_relative '../actions/html_unescape'
+require 'spec_helper'
 
 describe "html_unescape" do
 

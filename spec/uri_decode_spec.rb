@@ -1,4 +1,4 @@
-require_relative '../actions/uri_decode'
+require 'spec_helper'
 
 describe "URIDecode" do
 

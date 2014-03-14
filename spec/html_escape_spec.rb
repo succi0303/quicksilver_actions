@@ -1,4 +1,4 @@
-require_relative '../actions/html_escape'
+require 'spec_helper'
 
 describe "html_escape" do
 

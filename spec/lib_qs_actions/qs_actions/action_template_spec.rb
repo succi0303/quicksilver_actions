@@ -1,4 +1,4 @@
-require_relative '../../../actions/lib_qs_actions/qs_actions'
+require 'spec_helper'
 
 describe "ActionTemplate" do
 
