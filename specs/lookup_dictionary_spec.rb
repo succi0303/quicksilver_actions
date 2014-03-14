@@ -2,7 +2,7 @@ require_relative '../actions/lookup_dictionary'
 
 describe 'lookup_dictionary' do
 
-  let(:ld) { LookupDict.new }
+  let(:ld) { QSActions::LookupDict.new }
 
   it "construct correct command from arg" do
     cmd = ld.send(:construct_command, 'test')

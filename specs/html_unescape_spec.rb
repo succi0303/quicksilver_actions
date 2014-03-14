@@ -1,16 +1,11 @@
 require_relative '../actions/html_unescape'
 
-describe HTMLUnescape do
+describe "html_unescape" do
 
-  let(:hu) { HTMLUnescape.new }
-
-  it "construct correct command" do
-    cmd = hu.send(:construct_command, 'hogehoge')
-    expect(cmd).to eq 'echo "hogehoge" | qs'
-  end
+  let(:hu) { QSActions::HTMLUnescape.new }
 
   it "does html unescape correctly" do
-    unescaped_word = hu.send(:html_unescape, '&lt;html&gt;&lt;/html&gt;')
+    unescaped_word = hu.send(:update_text, '&lt;html&gt;&lt;/html&gt;')
     expect(unescaped_word).to eq "<html></html>"
   end
 end

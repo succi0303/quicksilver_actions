@@ -1,56 +1,31 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
+require_relative './lib_qs_actions/qs_actions'
 require 'cgi'
 
-# 
-# == HTMLUnescape
-#
-# Quicksilverの1stペインのテキストをHTMLアンエスケープし
-# 1stペインに書き戻す
-#
-# @author succi0303
-class HTMLUnescape
+module QSActions
 
-  # 引数のテキストをHTMLアンエスケープした後、シェル実行用のコマンドを作成し
-  # systemコマンドで実行する
-  #
-  # @param [String] word アンエスケープ対象のテキスト
-  def unescape(word)
-    unescape_word = html_unescape(word)
-    cmd = construct_command(unescape_word)
-    system cmd
-  end
+  # @author succi0303
+  class HTMLUnescape < ActionTemplate
 
-  private
+    # HTMLアンエスケープする
+    #
+    # @param [String] word アンエスケープ対象のテキスト
+    # @return [String] アンエスケープ済みテキスト
+    def update_text(text)
+      CGI.unescapeHTML(text)
+    end
 
-  # シェル実行用のコマンドを組み立てる
-  #
-  # @param [String] word アンエスケープ済みのテキスト
-  # @return [String] シェル実行用のコマンド
-  def construct_command(word)
-    quoted_word = %Q("#{word}")
-    cmd_before = "echo"
-    cmd_after = "| qs"
-    cmd = [cmd_before, quoted_word, cmd_after]
-    cmd.join(' ')
-  end
-
-  # HTMLアンエスケープする
-  #
-  # @param [String] word アンエスケープ対象のテキスト
-  # @return [String] アンエスケープ済みテキスト
-  def html_unescape(word)
-    unescaped_word = CGI.unescapeHTML(word)
-    return unescaped_word
   end
 
 end
 
 if $0 == __FILE__
 
-  word = ARGV[0]
-  hu = HTMLUnescape.new
-  hu.unescape(word)
+  text = ARGV[0]
+  hu = QSActions::HTMLUnescape.new
+  cmd = hu.execute_action(text)
+  system cmd
 
 end

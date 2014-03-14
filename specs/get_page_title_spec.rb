@@ -1,14 +1,9 @@
 require_relative '../actions/get_page_title'
 
-describe GetPageTitle do
+describe "get_page_title" do
 
-  let(:gpt) { GetPageTitle.new }
+  let(:gpt) { QSActions::GetPageTitle.new }
   
-  it "construct command correctly" do
-    cmd = gpt.send(:construct_command, 'hogehoge')
-    expect(cmd).to eq 'echo "hogehoge" | qs'
-  end
-
   describe "get title from url" do
 
     let(:html) { 
