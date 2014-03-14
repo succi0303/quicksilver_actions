@@ -6,14 +6,14 @@ require_relative './lib_qs_actions/qs_actions'
 # @author succi0303
 module QSActions
 
-  class ParenKakko < ActionTemplate
+  class ParenDoubleKakko < ActionTemplate
 
-    # テキストを括弧で囲む
+    # テキストを二重括弧で囲む
     #
-    # @param [String] text 括弧で囲むテキスト
-    # @return [String] 括弧で囲んだテキスト
+    # @param [String] text 二重括弧で囲むテキスト
+    # @return [String] 二重括弧で囲んだテキスト
     def update_text(text)
-      updated_text = %Q(「#{text}」)
+      updated_text = %Q(『#{text}』)
       return updated_text
     end
 
@@ -24,7 +24,7 @@ end
 if $0 == __FILE__
 
   text = ARGV[0]
-  pq = QSActions::ParenKakko.new
+  pq = QSActions::ParenDoubleKakko.new
   cmd = pq.execute_action(text)
   system cmd
 

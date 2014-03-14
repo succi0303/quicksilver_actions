@@ -29,6 +29,7 @@ Quicksilverの1stペインに「hello, world」が表示されればインスト
 - html\_escape - HTMLエスケープを実行する
 - html\_unescape - HTMLアンエスケープを実行する
 - lookup\_dictionary - Macの内蔵辞書で意味を調べる
+- paren\_double\_kakko - 二重括弧(『』)で囲む
 - paren\_kakko - 括弧(「」)で囲む
 - paren\_quote - シングルクォーテーションで囲む
 - uri\_decode - URIデコードを実行する
