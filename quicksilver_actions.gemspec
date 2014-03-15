@@ -1,9 +1,6 @@
-lib = File.expand_path('./actions/lib_qs_actions/qs_actions', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-
 Gem::Specification.new do |spec|
   spec.name = 'quicksilver actions'
-  spec.version = '0.0.1'
+  spec.version = '0.0.2'
   spec.author = 'succi0303'
   spec.email = 'succi0303@gmail.com'
   spec.homepage = 'https://github.com/succi0303/quicksilver_actions'
