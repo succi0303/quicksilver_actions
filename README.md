@@ -2,6 +2,10 @@
 
 [Quicksilver](http://qsapp.com)のアクションとして使用できるRuby製のスクリプト群です。
 
+### 動作環境
+
+- OSX Mavericks、Quicksilver v1.1.3(4007)で動作を確認しています。
+
 ## インストール
 
 `actions`ディレクトリ以下のファイル(ディレクトリを含む)を、`~/Library/Application\ Support/Quicksilver/Actions/`のディレクトリにコピーして、Quicksilverを再起動するとQuicksilverのアクションとして使用できるようになります。
@@ -30,11 +34,9 @@ Quicksilverの1stペインに「hello, world」が表示されればインスト
 - html\_escape - HTMLエスケープを実行する
 - html\_unescape - HTMLアンエスケープを実行する
 - lookup\_dictionary - Macの内蔵辞書で意味を調べる
-- paren\_double\_kakko - 二重括弧(『』)で囲む
-- paren\_kakko - 括弧(「」)で囲む
+- paren\_double\_kakko - 二重鍵括弧(『』)で囲む
+- paren\_kakko - 鍵括弧(「」)で囲む
+- paren\_parenthesis - 括弧()で囲む
 - paren\_quote - シングルクォーテーションで囲む
 - uri\_decode - URIデコードを実行する
 - uri\_encode - URIエンコードを実行する
-
-など
-

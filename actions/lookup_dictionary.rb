@@ -55,7 +55,7 @@ if $0 == __FILE__
 
   word = ARGV[0]
 
-  ld = LookupDict.new
+  ld = QSActions::LookupDict.new
   ld.lookup(word)
 
 end
