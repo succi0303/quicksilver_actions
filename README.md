@@ -33,6 +33,7 @@ Quicksilverの1stペインに「hello, world」が表示されればインスト
 基本的な使い方は、1stペインに任意のテキスト、2ndペインに実行したいアクションを入力してQuicksilverを実行する形式です。
 
 - get\_page\_title
+- github\_repository
 - html\_escape
 - html\_unescape
 - lookup\_dictionary
@@ -48,6 +49,12 @@ Quicksilverの1stペインに「hello, world」が表示されればインスト
 指定したURLからウェブページのページタイトルを取得して1stペインに書き戻す。
 
 1stペインには、任意のウェブページのURLを入力する。
+
+### github\_repository
+
+ユーザ名とリポジトリ名からGithubのURLを生成して1stペインに書き戻す。
+
+1stペインには、「ユーザ名/リポジトリ名」の形式でリポジトリ情報を入力する。
 
 ### html\_escape
 
