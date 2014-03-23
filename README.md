@@ -42,6 +42,7 @@ Quicksilverの1stペインにテキスト、2ndペインに実行するアクシ
 - paren\_kakko
 - paren\_parenthesis
 - paren\_quote
+- timezone\_date
 - uri\_decode
 - uri\_encode
 
@@ -76,6 +77,12 @@ Quicksilverの1stペインにテキスト、2ndペインに実行するアクシ
 ### paren\_quote
 
 対象のテキストをシングルクォーテーションで囲む
+
+### timezone\_date
+
+任意のタイムゾーンの現在の時刻を取得する
+
+1stペインにタイムゾーン(TZ)文字列を指定する(Japan, America/New\_York, UTCなど)
 
 ### uri\_decode
 
