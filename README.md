@@ -28,15 +28,61 @@ Quicksilverの1stペインに「hello, world」が表示されればインスト
 
 ## アクション
 
-インストールが完了すると、Quicksilverのアクションが追加されます。Quicksilverの1stペインにテキストを入力し、2ndペインで実行したいアクションを選択します。利用できるアクションは以下の通りです。
+インストールが完了すると、Quicksilverに新しいアクションが追加されます。追加されるアクションは以下のとおりです。
 
-- get\_page\_title - 指定したURLのウェブページのタイトルを取得する
-- html\_escape - HTMLエスケープを実行する
-- html\_unescape - HTMLアンエスケープを実行する
-- lookup\_dictionary - Macの内蔵辞書で意味を調べる
-- paren\_double\_kakko - 二重鍵括弧(『』)で囲む
-- paren\_kakko - 鍵括弧(「」)で囲む
-- paren\_parenthesis - 括弧()で囲む
-- paren\_quote - シングルクォーテーションで囲む
-- uri\_decode - URIデコードを実行する
-- uri\_encode - URIエンコードを実行する
+基本的な使い方は、1stペインに任意のテキスト、2ndペインに実行したいアクションを入力してQuicksilverを実行する形式です。
+
+- get\_page\_title
+- html\_escape
+- html\_unescape
+- lookup\_dictionary
+- paren\_double\_kakko
+- paren\_kakko
+- paren\_parenthesis
+- paren\_quote
+- uri\_decode
+- uri\_encode
+
+### get\_page\_title
+
+指定したURLからウェブページのページタイトルを取得して1stペインに書き戻す。
+
+1stペインには、任意のウェブページのURLを入力する。
+
+### html\_escape
+
+1stペインのテキストをHTMLエスケープして1stペインに書き戻す。
+
+### html\_unescape
+
+1stペインのテキストをHTMLアンエスケープして1stペインに書き戻す。
+
+### lookup\_dictionary
+
+指定した語句について、Macの内蔵辞書を起動して意味を調べる。
+
+1stペインには意味を調べたい語句を入力する。
+
+### paren\_double\_kakko
+
+1stペインのテキストを二重鍵括弧(『』)で囲んで1stペインに書き戻す。
+
+### paren\_kakko
+
+1stペインのテキストを鍵括弧(「」)で囲んで1stペインに書き戻す。
+
+### paren\_parenthesis
+
+1stペインのテキストを括弧(())で囲んで1stペインに書き戻す。
+
+### paren\_quote
+
+1stペインのテキストをシングルクォーテーションで囲んで1stペインに書き戻す。
+
+### uri\_decode
+
+1stペインのテキストをURIデコードして1stペインに書き戻す。
+
+### uri\_encode
+
+1stペインのテキストをURIエンコードして1stペインに書き戻す。
