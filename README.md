@@ -28,59 +28,15 @@ Quicksilverの1stペインに「hello, world」が表示されればインスト
 
 ## アクション
 
-インストールが完了すると、Quicksilverのアクションが追加されます。
+インストールが完了すると、Quicksilverのアクションが追加されます。Quicksilverの1stペインにテキストを入力し、2ndペインで実行したいアクションを選択します。利用できるアクションは以下の通りです。
 
-Quicksilverの1stペインにテキスト、2ndペインに実行するアクションを入力します。
-
-利用できるアクションは以下の通りです。
-
-- get\_page\_title
-- html\_escape
-- html\_unescape
-- lookup\_dictionary
-- paren\_double\_kakko
-- paren\_kakko
-- paren\_parenthesis
-- paren\_quote
-- uri\_decode
-- uri\_encode
-
-### get\_page\_title
-
-指定したURLのウェブページのタイトルを取得する
-
-### html\_escape
-
-HTMLエスケープを実行する
-
-### html\_unescape
-
-HTMLアンエスケープを実行する
-
-### lookup\_dictionary
-
-Macの内蔵辞書で意味を調べる
-
-### paren\_double\_kakko
-
-二重鍵括弧(『』)で囲む
-
-### paren\_kakko
-
-鍵括弧(「」)で囲む
-
-### paren\_parenthesis
-
-括弧()で囲む
-
-### paren\_quote
-
-シングルクォーテーションで囲む
-
-### uri\_decode
-
-URIデコードを実行する
-
-### uri\_encode
-
-URIエンコードを実行する
+- get\_page\_title - 指定したURLのウェブページのタイトルを取得する
+- html\_escape - HTMLエスケープを実行する
+- html\_unescape - HTMLアンエスケープを実行する
+- lookup\_dictionary - Macの内蔵辞書で意味を調べる
+- paren\_double\_kakko - 二重鍵括弧(『』)で囲む
+- paren\_kakko - 鍵括弧(「」)で囲む
+- paren\_parenthesis - 括弧()で囲む
+- paren\_quote - シングルクォーテーションで囲む
+- uri\_decode - URIデコードを実行する
+- uri\_encode - URIエンコードを実行する
