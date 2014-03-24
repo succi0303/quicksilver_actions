@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 require_relative './lib_qs_actions/qs_actions'
+require 'English'
 require 'open-uri'
 require 'nokogiri'
 
@@ -48,7 +49,7 @@ module QSActions
 
 end
 
-if $0 == __FILE__
+if $PROGRAM_NAME == __FILE__
   
   url_text = ARGV[0]
   gpt = QSActions::GetPageTitle.new

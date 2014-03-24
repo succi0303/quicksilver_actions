@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 require_relative './lib_qs_actions/qs_actions'
+require 'English'
 
 # @author succi0303
 module QSActions
@@ -21,7 +22,7 @@ module QSActions
 
 end
 
-if $0 == __FILE__
+if $PROGRAM_NAME == __FILE__
 
   text = ARGV[0]
   pq = QSActions::ParenKakko.new

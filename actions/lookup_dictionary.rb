@@ -1,6 +1,7 @@
 #!usr/bin/env ruby
 # encoding: utf-8
 
+require 'English'
 require 'uri'
 
 module QSActions
@@ -51,7 +52,7 @@ module QSActions
 
 end
 
-if $0 == __FILE__
+if $PROGRAM_NAME == __FILE__
 
   word = ARGV[0]
 
