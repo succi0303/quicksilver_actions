@@ -9,7 +9,7 @@ require 'nokogiri'
 module QSActions
 
   # @auhor succi0303
-  class GetPageTitle < ActionTemplate
+  class GetPageTitle < ReturnTextToQuicksilver
 
     private
 
@@ -17,30 +17,20 @@ module QSActions
     #
     # @param [String] url タイトル取得対象のURL
     # @note HTMLの取得に失敗した場合、Quicksilverの1stペインにエラーメッセージを出力する
-    def update_text(url_text)
+    def edit_text(text)
       begin
-        html = get_html_from_url(url_text)
+        html = get_html(text)
       rescue
-        'ページの取得に失敗しました'
+        return 'ページの取得に失敗しました'
       end
-
-      get_title_from_html(html)
+      get_title(html)
     end
 
-    # 該当するURLのHTMLボディを取得する
-    #
-    # @param [String] url タイトル取得対象のURL
-    # @return [String] 該当するURLのHTMLボディ
-    def get_html_from_url(url)
-      html = open(url).read
-      return html
+    def get_html(url)
+      open(url).read
     end
 
-    # HTMLからタイトルを取得する
-    #
-    # @param [String] HTMLボディ
-    # @return [String] HTMLのtitle
-    def get_title_from_html(html)
+    def get_title(html)
       page = Nokogiri::HTML(html)
       page.title
     end
@@ -51,9 +41,9 @@ end
 
 if $PROGRAM_NAME == __FILE__
   
-  url_text = ARGV[0]
-  gpt = QSActions::GetPageTitle.new
-  cmd = gpt.execute_action(url_text)
+  text = ARGV[0]
+  command_builder = QSActions::GetPageTitle.new
+  cmd = command_builder.make_command(text)
   system cmd
 
 end
