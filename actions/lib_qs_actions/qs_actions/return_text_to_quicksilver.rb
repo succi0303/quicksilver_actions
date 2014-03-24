@@ -5,7 +5,7 @@ module QSActions
   class ReturnTextToQuicksilver < MakeCommand
 
     def make_command(text)
-      super
+      edited_text = edit_text(text)
       command = return_text_to_quicksilver(edited_text)
       return command
     end

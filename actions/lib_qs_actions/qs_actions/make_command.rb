@@ -6,6 +6,7 @@ module QSActions
 
     def make_command(text)
       edited_text = edit_text(text)
+      return edited_text
     end
 
     def edit_text(text)
