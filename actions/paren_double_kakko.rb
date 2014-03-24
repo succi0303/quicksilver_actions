@@ -7,15 +7,14 @@ require 'English'
 # @author succi0303
 module QSActions
 
-  class ParenDoubleKakko < ActionTemplate
+  class ParenDoubleKakko < ReturnTextToQuicksilver
 
     # テキストを二重括弧で囲む
     #
     # @param [String] text 二重括弧で囲むテキスト
     # @return [String] 二重括弧で囲んだテキスト
-    def update_text(text)
-      updated_text = %Q(『#{text}』)
-      return updated_text
+    def edit_text(text)
+      %Q(『#{text}』)
     end
 
   end
@@ -25,8 +24,8 @@ end
 if $PROGRAM_NAME == __FILE__
 
   text = ARGV[0]
-  pq = QSActions::ParenDoubleKakko.new
-  cmd = pq.execute_action(text)
+  command_builder = QSActions::ParenDoubleKakko.new
+  cmd = command_builder.make_command(text)
   system cmd
 
 end
