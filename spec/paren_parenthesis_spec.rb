@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe "paren_parenthesis" do
 
-  let(:pq) { QSActions::ParenParenthesis.new }
+  let(:action) { QSActions::ParenParenthesis.new }
 
   it "puts the text into parenthesis" do
-    updated_text = pq.send(:update_text, "テスト")
-    expect(updated_text).to eq "(テスト)"
+    edited_text = action.send(:edit_text, "テスト")
+    expect(edited_text).to eq "(テスト)"
   end
 
 end

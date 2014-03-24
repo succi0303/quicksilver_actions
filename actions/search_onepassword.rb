@@ -7,25 +7,22 @@ require 'uri'
 
 module QSActions
 
-  # Author:: succi0303
-  class LookupDict < OpenApplication
-    # URLスキームを生成する
+  # @author scci0303
+  class SearchOnepassword < OpenApplication
+    # 1password検索のURLスキームを生成する
     #
     # @param [String] text 検索対象のテキスト
-    # @return [String] OSX内蔵辞書検索用のURLスキーム
+    # @return [String] 1password検索用のURLスキーム
     def edit_text(text)
-      %Q(dict://#{URI.encode(text)})
+      %Q(onepassword4://search/#{URI.encode(text)})
     end
-
   end
-
 end
 
 if $PROGRAM_NAME == __FILE__
 
   text = ARGV[0]
-  command_builder = QSActions::LookupDict.new
+  command_builder = QSActions::SearchOnepassword.new
   cmd = command_builder.make_command(text)
   system cmd
-
 end

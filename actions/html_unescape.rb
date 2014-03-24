@@ -2,18 +2,19 @@
 # encoding: utf-8
 
 require_relative './lib_qs_actions/qs_actions'
+require 'English'
 require 'cgi'
 
 module QSActions
 
   # @author succi0303
-  class HTMLUnescape < ActionTemplate
+  class HTMLUnescape < ReturnTextToQuicksilver
 
     # HTMLアンエスケープする
     #
     # @param [String] word アンエスケープ対象のテキスト
     # @return [String] アンエスケープ済みテキスト
-    def update_text(text)
+    def edit_text(text)
       CGI.unescapeHTML(text)
     end
 
@@ -21,11 +22,11 @@ module QSActions
 
 end
 
-if $0 == __FILE__
+if $PROGRAM_NAME == __FILE__
 
   text = ARGV[0]
-  hu = QSActions::HTMLUnescape.new
-  cmd = hu.execute_action(text)
+  command_builder = QSActions::HTMLUnescape.new
+  cmd = command_builder.make_command(text)
   system cmd
 
 end

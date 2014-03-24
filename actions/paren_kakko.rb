@@ -2,30 +2,29 @@
 # encoding: utf-8
 
 require_relative './lib_qs_actions/qs_actions'
+require 'English'
 
 # @author succi0303
 module QSActions
 
-  class ParenKakko < ActionTemplate
-
+  class ParenKakko < ReturnTextToQuicksilver
     # テキストを括弧で囲む
     #
     # @param [String] text 括弧で囲むテキスト
     # @return [String] 括弧で囲んだテキスト
-    def update_text(text)
-      updated_text = %Q(「#{text}」)
-      return updated_text
+    def edit_text(text)
+      %Q(「#{text}」)
     end
 
   end
 
 end
 
-if $0 == __FILE__
+if $PROGRAM_NAME == __FILE__
 
   text = ARGV[0]
-  pq = QSActions::ParenKakko.new
-  cmd = pq.execute_action(text)
+  command_builder = QSActions::ParenKakko.new
+  cmd = command_builder.make_command(text)
   system cmd
 
 end
