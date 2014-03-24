@@ -2,15 +2,10 @@ require 'spec_helper'
 
 describe 'lookup_dictionary' do
 
-  let(:ld) { QSActions::LookupDict.new }
+  let(:action) { QSActions::LookupDict.new }
 
-  it "construct correct command from arg" do
-    cmd = ld.send(:construct_command, 'test')
-    expect(cmd).to eq 'open dict://test'
-  end
-
-  it "does URLencode to word" do
-    encoded_word = ld.send(:url_encode, 'テスト')
-    expect(encoded_word).to eq '%e3%83%86%e3%82%b9%e3%83%88'
+  it "make the url scheme" do
+    edited_text = action.send(:edit_text, 'test')
+    expect(edited_text).to eq 'dict://test'
   end
 end
