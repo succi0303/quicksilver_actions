@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe "URIDecode" do
 
-  let(:ue) { QSActions::URIDecode.new }
+  let(:action) { QSActions::URIDecode.new }
 
   it "does uri decode for args" do
-    decoded_word = ue.send(:update_text, '%e3%83%86%e3%82%b9%e3%83%88')
-    expect(decoded_word).to eq "テスト"
+    edited_text = action.send(:edit_text, '%e3%83%86%e3%82%b9%e3%83%88')
+    expect(edited_text).to eq "テスト"
   end
 end
