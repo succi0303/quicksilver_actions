@@ -7,7 +7,7 @@ require 'English'
 module QSActions
 
   #author succi0303
-  class GithubRepository < ActionTemplate
+  class GithubRepository < ReturnTextToQuicksilver
 
     GITHUB_URL = 'https://github.com/'
 
@@ -17,24 +17,9 @@ module QSActions
     #
     # @param [String] text "ユーザ名/リポジトリ名"形式のテキスト
     # @return [String] 該当するリポジトリのURL 
-    def update_text(text)
-
-      if include_one_slash?(text)
-        updated_text = get_url(text)
-      else
-        updated_text = '入力が不正です'
-      end
-
-      return updated_text
-    end
-
-
-    # ユーザ名とリポジトリからURLを生成する
-    #
-    # @param [String] text "ユーザ名/リポジトリ"形式のテキスト
-    # @return [String] 該当するリポジトリのURL
-    def get_url(text)
-      "#{GITHUB_URL}#{text}"
+    def edit_text(text)
+      return '入力が不正です' unless include_one_slash?(text)
+      return "#{GITHUB_URL}#{text}"
     end
 
     # 入力されたテキストの形式をチェックする
@@ -53,8 +38,8 @@ end
 if $PROGRAM_NAME == __FILE__
   
   text = ARGV[0]
-  gr = QSActions::GithubRepository.new
-  cmd = gr.execute_action(text)
+  command_builder = QSActions::GithubRepository.new
+  cmd = command_builder.make_command(text)
   system cmd
 
 end
