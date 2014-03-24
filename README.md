@@ -41,6 +41,7 @@ Quicksilverの1stペインに「hello, world」が表示されればインスト
 - paren\_kakko
 - paren\_parenthesis
 - paren\_quote
+- search\_onepassword
 - uri\_decode
 - uri\_encode
 
@@ -85,6 +86,14 @@ Quicksilverの1stペインに「hello, world」が表示されればインスト
 ### paren\_quote
 
 1stペインのテキストをシングルクォーテーションで囲んで1stペインに書き戻す。
+
+### search\_onepassword
+
+1Passwordのアプリケーションを起動して1stペインのテキストで検索する。
+
+#### 補足
+
+1Password4対応です。Quicksilver標準添付の1password pluginがありますが、1Passwordのバージョンを4にしてから動作しなくなったため、簡易的な代替アクションとして作成しました。
 
 ### uri\_decode
 
